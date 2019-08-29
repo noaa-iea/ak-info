@@ -15,7 +15,9 @@ for (i in 1:nrow(d)){
   if (!file.exists(rmd)) file.create(rmd)
   
   # render Rmd to html, if Rmd newer
-  if (file_info(rmd)$modification_time > file_info(htm)$modification_time) render(rmd)
+  if (file_info(rmd)$modification_time > file_info(htm)$modification_time){
+    render(rmd, html_document(self_contained=F, lib_dir = "modal_libs"))
+  }
 }
 
 # render website, ie Rmds in root
