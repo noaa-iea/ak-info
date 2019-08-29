@@ -14,15 +14,15 @@
 
 <title>README.utf8.md</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="README_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="README_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="README_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="README_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="README_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="README_files/navigation-1.1/tabsets.js"></script>
+<link href="README_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="README_files/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -295,13 +295,48 @@ $(document).ready(function () {
 <div id="iea-ak-info" class="section level1">
 <h1>iea-ak-info</h1>
 <p>Integrated Ecosystem Assessment - Alaska - infographics</p>
-<div id="developer" class="section level2">
-<h2>developer</h2>
+<p>This website is an initial demonstration of using a simple interactive infographics implementation based on JavaScript only (ie not using the R-based <a href="https://github.com/marinebon/infographiq">infographiq</a>).</p>
+<div id="technical-implementation" class="section level2">
+<h2>technical implementation</h2>
+<p>The illustration in scalable vector graphics (<code>.svg</code>) format has individual elements given an identefier (ie <code>id</code>) which are linked to popup (ie “modal”) windows of content using a simple table in comma-seperated value (<code>.csv</code>) format using <a href="https://d3js.org">d3</a>.</p>
+<div id="core-files-.svg-.csv" class="section level3">
+<h3>core files: <code>.svg</code>, <code>.csv</code></h3>
+<p>In this example for the Eastern Bering Sea (<code>ebs</code>), these two files are at the core of the infographic construction:</p>
+<ol style="list-style-type: decimal">
+<li><strong>illustration</strong>: <a href="https://github.com/marinebon/iea-ak-info/blob/master/svg/ebs.svg"><code>ebs.svg</code></a></li>
+<li><strong>table</strong>: <a href="https://github.com/marinebon/iea-ak-info/blob/master/svg/ebs_links.csv"><code>ebs_links.csv</code></a></li>
+</ol>
+<p>Each <code>link</code> in the table per element identified (<code>id</code>) is the page of content displayed in the modal popup window when the given element is clicked. The <code>title</code> determines the name on hover and title of the modal window.</p>
+</div>
+<div id="html-and-jscss-dependencies" class="section level3">
+<h3>html and js/css dependencies</h3>
+<p>The illustration (<code>.svg</code>) and table (<code>.csv</code>) get rendered with the <code>link_svg()</code> function (defined in <code>infographiq.js</code>) with the following HTML:</p>
+<pre class="html"><code>&lt;!-- load dependencies on JS &amp; CSS --&gt;
+&lt;script src=&#39;https://d3js.org/d3.v5.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;infographiq.js&#39;&gt;&lt;/script&gt;
+
+&lt;!-- add placeholder in page for placement of svg --&gt;
+&lt;div id=&#39;svg&#39;&gt;&lt;/div&gt;
+
+&lt;!-- run function to link the svg --&gt;
+&lt;script&gt;link_svg(svg=&#39;svg/ebs.svg&#39;, csv=&#39;svg/ebs_links.csv&#39;);&lt;/script&gt;</code></pre>
+<p>The modal popup windows are rendered by <a href="https://getbootstrap.com/docs/3.3/javascript/#modals">Bootstrap modals</a>. This dependency is included with the default Rmarkdown rendering, but if you need to seperately include it then add this HTML:</p>
+<pre class="html"><code>&lt;!-- load dependencies on JS &amp; CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css&quot;&gt;
+&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div id="build-and-view-website-in-r" class="section level2">
+<h2>build and view website in R</h2>
+<p>This website is constructed using <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">Rmarkdown website</a> for enabling easy construction of site-wide navigation (see <a href="https://github.com/marinebon/iea-ak-info/blob/master/_site.yml"><code>_site.yml</code></a>) and embedding of <a href="https://www.htmlwidgets.org">htmlwidgets</a>, which provide interactive maps, time series plots, etc into the html pages to populate the modal window content in <a href="https://github.com/marinebon/iea-ak-info/tree/master/modals"><code>modals/</code></a>. To build the website and view it, here are the commands to run in R:</p>
 <pre class="r"><code># build website
-rmarkdown::render_site()
+source(&quot;render_site.R&quot;)
 
 # serve website
 servr::httd(&quot;docs&quot;)</code></pre>
+<p>The <a href="https://github.com/marinebon/iea-ak-info/blob/master/render_site.R"><code>render_site.R</code></a> script renders the modal and website pages.</p>
+<p>Note the actual html content served at <a href="https://marinebon.github.io/iea-ak-info">marinebon.github.io/iea-ak-info</a> via <a href="https://pages.github.com/">Github Pages</a> is all the html/jss/csss files copied into the <code>docs/</code> folder of this repository.</p>
 </div>
 </div>
 

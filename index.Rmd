@@ -1,12 +1,37 @@
 ---
 title: "2018 Eastern Bering Sea Ecosystem Status Report: In Brief"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 <script src='https://d3js.org/d3.v5.min.js'></script>
 <script src='infographiq.js'></script>
+
+## Indicators
+
+Click on elements in the graphic for details:
 
 <div id='svg'></div>
 
 <script>
 link_svg(svg='svg/ebs.svg', csv='svg/ebs_links.csv');
 </script>
+
+## Future Projections
+
+The Chukchi Sea has been freezing up, on average, one day later each year since 1980. NOAA Fisheries’ Alaska Fisheries Science Center and NOAA Research’s Pacific Marine Environmental Laboratory produce a 9-month forecast of ocean conditions in the eastern Bering Sea using the Bering10K ocean and plankton model. The prediction for summer 2019 is for continued warmth similar to 2014–2018 and reduced cold pool extent.
+
+## Management Uses
+
+Resource managers used ecosystem infor- mation collected in this report to help determine management measures for pollock in 2019. They took into account unfavorable environmental conditions that limit pollock survival including warm water and limited prey, which could affect future stock size. Despite the stock being well above average, they made a precautionary adjustment to lower the **overall** biological catch limits for pollock. Pollock are man- aged as part of the groundfish group, which have a combined annual fishing cap of 2 m mt for the Bering Sea. Due to biologi- cal constraints in other groundfish fisher- ies, the final catch limits for pollock, well below the biological limits, were increased slightly from 2018 (by <2%).
+
+![Links to full reports from Large Marine Ecosystems are available here: https://access.afsc.noaa. gov/reem/ecoweb/Index.php](img/ebs_map_lmes.png)
+
+## Reference
+
+**Reference**: Siddon, E., and Zador, S., 2018. Ecosystem Status Report 2018: Eastern Bering Sea, Stock Assessment and Fishery Evaluation Report, North Pacific Fishery Management Council, 605 W 4th Ave, Suite 306, Anchorage, AK 99501
+
+**Contact**: elizabeth.siddon@noaa.gov 907-789-6055
+
