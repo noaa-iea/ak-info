@@ -1,0 +1,13 @@
+name: "IEA Alaska infographics"
+output_dir: "docs"
+navbar:
+  title: "IEA-AK-info"
+  left:
+    - text: "Home"
+      href: index.html
+output:
+  html_document:
+    theme: cosmo # darkly # https://bootswatch.com
+    self_contained: no
+    css: styles.css
+    

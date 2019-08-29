@@ -1,0 +1,12 @@
+---
+title: "2018 Eastern Bering Sea Ecosystem Status Report: In Brief"
+---
+
+<script src='https://d3js.org/d3.v5.min.js'></script>
+<script src='infographiq.js'></script>
+
+<div id='svg'></div>
+
+<script>
+link_svg(svg='svg/ebs.svg', csv='svg/ebs_links.csv');
+</script>
