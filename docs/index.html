@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -88,7 +87,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -237,6 +235,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -265,6 +264,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -383,7 +388,7 @@ link_svg(svg='svg/ebs.svg', csv='svg/ebs_links.csv');
 <h2>Management Uses</h2>
 <p>Resource managers used ecosystem infor- mation collected in this report to help determine management measures for pollock in 2019. They took into account unfavorable environmental conditions that limit pollock survival including warm water and limited prey, which could affect future stock size. Despite the stock being well above average, they made a precautionary adjustment to lower the <strong>overall</strong> biological catch limits for pollock. Pollock are man- aged as part of the groundfish group, which have a combined annual fishing cap of 2 m mt for the Bering Sea. Due to biologi- cal constraints in other groundfish fisher- ies, the final catch limits for pollock, well below the biological limits, were increased slightly from 2018 (by &lt;2%).</p>
 <div class="figure">
-<img src="img/ebs_map_lmes.png" alt="Links to full reports from Large Marine Ecosystems are available here: https://access.afsc.noaa.gov/reem/ecoweb/Index.php" />
+<img src="img/ebs_map_lmes.png" alt="" />
 <p class="caption">Links to full reports from Large Marine Ecosystems are available here: <a href="https://access.afsc.noaa.gov/reem/ecoweb/Index.php" class="uri">https://access.afsc.noaa.gov/reem/ecoweb/Index.php</a></p>
 </div>
 </div>
@@ -443,7 +448,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

@@ -1,1 +1,28 @@
 **Northern fur seal pup** production at St. Paul Island has been declining by ~4% per year since 1998 while while St. George Island pup production increased by about 5% since 2016. Also at the Pribilof Islands, seabird reproduction was poor, as expected for a warm year with little sea ice. On St. George Island, murres experienced the latest mean hatch date ever recorded.
+
+```{r, echo=F, message=F}
+library(readr)
+library(xts)
+library(dygraphs)
+
+d_csv <- "https://access.afsc.noaa.gov/REFM/REEM/ecoweb/csv/table/fur.csv"
+
+d <- read_csv(d_csv, skip=4, na = "null")
+
+dygraph(d) %>% 
+  dyAxis(
+    "y",
+    label = "Pups born",
+    valueFormatter     = 'function(d){return d.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");}',
+    axisLabelFormatter = 'function(d){return d.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");}',
+    axisLabelFontSize = 10,
+    axisLabelWidth = 70) %>% 
+  dyAxis("x", label = "Year")
+```
+
+- _**Dataset**_: 	St. Paul fur seals, numbers, 1961-2017, intermittently. 
+- _**Region**_: 	Eastern Bering Sea 
+- _**Source**_: 	Kerim Aydin (NOAA/NMML) 
+- _**Download**_: [`r basename(d_csv)`](`r d_csv`)
+- _**Metadata**_: [Alaska Marine Ecosystem Status Reports](https://access.afsc.noaa.gov/REFM/REEM/ecoweb/Index.php?ID=9)
+
