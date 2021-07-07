@@ -11,7 +11,7 @@
 
 
 
-<title>2018 Eastern Bering Sea Ecosystem Status Report: In Brief</title>
+<title>Sitka Status Report</title>
 
 <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -336,39 +336,50 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">2018 Eastern Bering Sea Ecosystem Status Report: In Brief</h1>
+<h1 class="title toc-ignore">Sitka Status Report</h1>
 
 </div>
 
 
-<script src='https://d3js.org/d3.v5.min.js'></script>
-<script src='infographiq.js'></script>
 <div id="indicators" class="section level2">
 <h2>Indicators</h2>
 <p>Click on elements in the graphic for details:</p>
-<div id="svg">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-9">
+<div id="svg1">
 
 </div>
+</div>
+<div class="col-md-3">
+<ul id="toc1">
+</ul>
+</div>
+</div>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+  integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" 
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
+  crossorigin="anonymous"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+  integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
+  crossorigin="anonymous" />
+<script src='https://marinebon.org/infographiqJS/libs/infographiq_latest/infographiq.js'></script>
+<link rel="stylesheet" href="https://marinebon.org/infographiqJS/libs/infographiq_latest/infographiq.css">
 <script>
-link_svg(svg='svg/ebs.svg', csv='svg/ebs_links.csv');
+link_svg({
+svg: "svg/sitka.svg", 
+csv: "svg/sitka_svg_link.csv", 
+svg_id: "svg1", 
+toc_id: "toc1",
+text_toggle: "toggle_on"});
 </script>
-</div>
-<div id="future-projections" class="section level2">
-<h2>Future Projections</h2>
-<p>The Chukchi Sea has been freezing up, on average, one day later each year since 1980. NOAA Fisheries’ Alaska Fisheries Science Center and NOAA Research’s Pacific Marine Environmental Laboratory produce a 9-month forecast of ocean conditions in the eastern Bering Sea using the Bering10K ocean and plankton model. The prediction for summer 2019 is for continued warmth similar to 2014–2018 and reduced cold pool extent.</p>
-</div>
-<div id="management-uses" class="section level2">
-<h2>Management Uses</h2>
-<p>Resource managers used ecosystem infor- mation collected in this report to help determine management measures for pollock in 2019. They took into account unfavorable environmental conditions that limit pollock survival including warm water and limited prey, which could affect future stock size. Despite the stock being well above average, they made a precautionary adjustment to lower the <strong>overall</strong> biological catch limits for pollock. Pollock are man- aged as part of the groundfish group, which have a combined annual fishing cap of 2 m mt for the Bering Sea. Due to biologi- cal constraints in other groundfish fisher- ies, the final catch limits for pollock, well below the biological limits, were increased slightly from 2018 (by &lt;2%).</p>
-<div class="figure">
-<img src="img/ebs_map_lmes.png" alt="" />
-<p class="caption">Links to full reports from Large Marine Ecosystems are available here: <a href="https://access.afsc.noaa.gov/reem/ecoweb/Index.php" class="uri">https://access.afsc.noaa.gov/reem/ecoweb/Index.php</a></p>
-</div>
 </div>
 <div id="reference" class="section level2">
 <h2>Reference</h2>
-<p><strong>Reference</strong>: Siddon, E., and Zador, S., 2018. Ecosystem Status Report 2018: Eastern Bering Sea, Stock Assessment and Fishery Evaluation Report, North Pacific Fishery Management Council, 605 W 4th Ave, Suite 306, Anchorage, AK 99501</p>
-<p><strong>Contact</strong>: <a href="mailto:elizabeth.siddon@noaa.gov" class="email">elizabeth.siddon@noaa.gov</a> 907-789-6055</p>
+<p><strong>Contact</strong>: Marysia Szymkowiak (email: <a href="mailto:marysia.szymkowiak@noaa.gov" class="email">marysia.szymkowiak@noaa.gov</a>, phone: 907-789-6049)</p>
 </div>
 
 

@@ -3,8 +3,10 @@ output_dir: "docs"
 navbar:
   title: "IEA-AK-info"
   left:
-    - text: "Home"
+    - text: "Eastern Bering Sea"
       href: index.html
+    - text: "Sitka"
+      href: sitka.html   
 output:
   html_document:
     theme: cosmo # darkly # https://bootswatch.com
