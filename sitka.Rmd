@@ -1,17 +1,21 @@
 ---
 title: "Sitka Status Report"
-output:
-  html_document:
-    toc: true
-    toc_float: true
 ---
 
 ## Indicators
 
 Click on elements in the graphic for details:
 
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-9">
 <div id = "svg1"></div>
+</div>
+<div class="col-md-3">
 <ul id="toc1"></ul>
+</div>
+</div>
+</div>
 
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
