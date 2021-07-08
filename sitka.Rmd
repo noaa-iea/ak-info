@@ -1,6 +1,13 @@
 ---
 title: "Sitka Status Report"
 ---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 
 ## Indicators
 
@@ -34,5 +41,5 @@ text_toggle: "toggle_on"});
 
 ## Reference
 
-**Contact**: Marysia Szymkowiak (email: marysia.szymkowiak@noaa.gov, phone: 907-789-6049)
+**Contact**: Marysia Szymkowiak (email: marysia.szymkowiak@noaa.gov, phone: 907-789-6049).
 
